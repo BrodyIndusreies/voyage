@@ -18,7 +18,7 @@ public class ProjectListings {
 
     public static ProjectListings get(Context context) {
         if (sProjectListings == null) {
-            sProjectListings = new ProjectListings(context);
+            //sProjectListings = new ProjectListings(context);
         }
         return sProjectListings;
     }

@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.widget.ImageButton;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,12 +15,13 @@ import java.util.ArrayList;
 public class mainScreenActivity extends AppCompatActivity {
 
     //our user options
-    private ImageButton mAddProjectButton;
-    private ImageButton mRemoveProjectButton;
-    private ImageButton mSettingsButton;
+    private ImageView mAddProjectButton;
+    private ImageView mRemoveProjectButton;
+    private ImageView mSettingsButton;
 
     //what displays if there are no current projects
     private TextView mEmptyProjectTextView;
+
 
 
 
@@ -28,7 +30,25 @@ public class mainScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        mEmptyProjectTextView = (TextView)findViewById(R.id.empty_projects_text);
         mEmptyProjectTextView.setText(R.string.empty_projectArray);
+
+        mAddProjectButton = (ImageView)findViewById(R.id.add_Project_Button);
+
+        //I'll set this up to link to your project creation intent when you create it. - Nam
+        mAddProjectButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mRemoveProjectButton = (ImageView)findViewById(R.id.remove_Project_Button);
+
+        mSettingsButton = (ImageView)findViewById(R.id.settings_Button);
+
+
     }
 
     @Override
