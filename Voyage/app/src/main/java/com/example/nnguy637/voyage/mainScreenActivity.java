@@ -1,5 +1,6 @@
 package com.example.nnguy637.voyage;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 
 public class mainScreenActivity extends AppCompatActivity {
 
+    //request coded
+    private static final int REQUEST_CODE_ADD_PROJECT = 0;
     //our user options
     private ImageView mAddProjectButton;
     private ImageView mRemoveProjectButton;
@@ -40,7 +43,8 @@ public class mainScreenActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                Intent i = addProjectActivity.newIntent(mainScreenActivity.this);
+                startActivityForResult(i, REQUEST_CODE_ADD_PROJECT);
             }
         });
 
