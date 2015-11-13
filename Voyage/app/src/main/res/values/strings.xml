@@ -1,8 +1,13 @@
 <resources>
+  /**
+   * Created by nnguy637 on 10/27/2015.
+    *Modified by BrodyIndustries on 11/13/2015
+   */
     <string name="app_name">Voyage</string>
 
     <string name="empty_projectArray">Add a new project to get started!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="button_add"></string>
+    <string name="button_delete"></string>
     <color name="skyblue">#7ec0ee</color>
 </resources>
