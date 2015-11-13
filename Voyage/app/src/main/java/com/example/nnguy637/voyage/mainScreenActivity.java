@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class mainScreenActivity extends AppCompatActivity {
 
     //request coded
     private static final int REQUEST_CODE_ADD_PROJECT = 0;
+    private static final int REQUEST_CODE_SETTINGS = 2;
     //our user options
     private ImageView mAddProjectButton;
     private ImageView mRemoveProjectButton;
@@ -31,6 +33,7 @@ public class mainScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main_screen);
 
         mEmptyProjectTextView = (TextView)findViewById(R.id.empty_projects_text);
@@ -51,6 +54,12 @@ public class mainScreenActivity extends AppCompatActivity {
         mRemoveProjectButton = (ImageView)findViewById(R.id.remove_Project_Button);
 
         mSettingsButton = (ImageView)findViewById(R.id.settings_Button);
+        mSettingsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = settingsActivity.newIntent(mainScreenActivity.this);
+                startActivityForResult(i, REQUEST_CODE_SETTINGS);
+            }
+        });
 
 
     }

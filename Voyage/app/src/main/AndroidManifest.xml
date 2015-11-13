@@ -19,6 +19,9 @@
 
         <activity android:name=".addProjectActivity"
             android:label="addProject"/>
+        <activity android:name=".settingsActivity"
+            android:label="settings">
+        </activity>
     </application>
 
 </manifest>
